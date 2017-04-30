@@ -45,7 +45,9 @@ public class JavaInte {
       System.out.println("\t7. array");
       System.out.println("\t8. setters and getters example");
       System.out.println("\t9. 2D array");
-      System.out.println("\t10. Quit");
+      System.out.println("\t10. tbd");
+      System.out.println("\t11. tbd");
+      System.out.println("\t12. Quit");
 
       System.out.println("\nPlease Choose a main menu item:");
 
@@ -115,112 +117,23 @@ public class JavaInte {
         case 6:
 
           // conditional menu
+          condiState();
 
-          int condi_menu;
-
-          System.out.println("\nPlease select an option: \n");
-          System.out.println("1. Relational operators");
-          System.out.println("2. Conditional operators");
-
-          condi_menu = in.nextInt();
-
-          switch (condi_menu) {
-            case 1:
-
-              System.out.println(" \t relational operator is a programming language "
-                  + "construct or operator that tests or defines some kind "
-                  + "of relation between two values.\n");
-              System.out.println("\t In more simplistic terms, this operation "
-                  + "compares and distinguishes objects of the same type");
-              System.out.println(" \n\tThe equality and relational operators determine if one "
-                  + "operand is greater than, less than, equal or not equal to another operand.");
-
-              /*
-               * Some of the more common symbols include == equal to != not equal to > greater than
-               * >= greater than or equal to < less than <= less than or equal to
-               */
-
-              System.out.println(
-                  "\tfor example please type in two integers in order to compare them:  \n");
-
-              int Cond_val1 = in.nextInt();
-              int Cond_val2 = in.nextInt();
-              if (Cond_val1 == Cond_val2) {
-                System.out.println("value 1 == value 2");
-              }
-              if (Cond_val1 != Cond_val2) {
-                System.out.println("value1 != value2");
-              }
-              if (Cond_val1 > Cond_val2) {
-                System.out.println("value1 > value2");
-              }
-              if (Cond_val1 < Cond_val2) {
-                System.out.println("value1 < value2");
-              }
-              if (Cond_val1 <= Cond_val2) {
-                System.out.println("value1 <= value2");
-              }
-
-              break;
-
-            case 2:
-              System.out
-                  .println("The && and || operators perform Conditional-AND and Conditional-OR "
-                      + "operations on two boolean expressions. "
-                      + "\nThese operators exhibit 'short-circuiting' behavior, "
-                      + "which means that the second operand is evaluated only if needed.");
-
-              int value1 = 1;
-              int value2 = 2;
-              if ((value1 == 1) && (value2 == 2)) {
-                System.out.println("value1 is 1 AND value2 is 2");
-              }
-              if ((value1 == 1) || (value2 == 1)) {
-                System.out.println("value1 is 1 OR value2 is 1");
-              }
-
-              break;
-
-            default:
-              System.out.println("Invalid Choice\n back to main.");
-          }
-
+          in.nextLine();
+          System.out.println("Press Enter to go to Start");
           in.nextLine();
 
           break;
 
         case 7:
-          int array_menu;
-
-          System.out.println("\nPlease select an array example: \n");
-          System.out.println("1. find smallest value in array");
-          System.out.println("2. find sum values of an array ");
-
-          array_menu = in.nextInt();
-
-          switch (array_menu) {
-            case 1:
-
-              int[] Minarray = new int[] { 10, 11, 88, 2, 12, 120 };
-              System.out.println("\nThe array values are: 10, 11, 88, 2, 12, 120");
-              // Calling MinVal() method for getting min value
-              int min = MinVal(Minarray);
-              System.out.println("Minimum Value is: " + min);
-
-              break;
-
-            case 2:
-              int[] sum_arr = new int[] { 21, 16, 86, 21, 3 };
-              System.out.println("\nThe array values are: 21,16,86,21,3");
-              int sums_fer_bums = sumVal(sum_arr);
-              System.out.println("The sum is " + sums_fer_bums);
-
-              break;
-
-            default:
-              System.out.println("Invalid Choice\n back to main.");
-          }
-
+          //array sample menu
+          
+          arrSample(in.nextInt());
+          
+          in.nextLine();
+          
+          in.nextLine();
+          System.out.println("Press Enter to go to Start");
           in.nextLine();
 
           break;
@@ -245,14 +158,19 @@ public class JavaInte {
 
           in.nextLine();
           break;
-
+          
         case 11:
+
+          in.nextLine();
+          break;
+
+        case 12:
           System.out.println("\nBye-bye!");
           quit = true;
           break;
 
         default:
-          System.out.println("Invalid choice.");
+          System.out.println("Invalid choice!");
       }
 
     } while (!quit);
@@ -265,13 +183,13 @@ public class JavaInte {
   }
 
   public static void setUndget() {
-    Student tyler = new Student("Tyler"); // creating an instance of the Student class
+    Student carl = new Student("Carl"); // creating an instance of the Student class
     Student derek = new Student("Derek");
 
-    tyler.setScore(1, 100);
+    carl.setScore(1, 100);
     // creating an array capable of storing objects created from the Student class
     Student[] classroom = new Student[2];
-    classroom[0] = tyler;
+    classroom[0] = carl;
     classroom[1] = derek;
 
     for (Student aStudent : classroom) {
@@ -331,7 +249,7 @@ public class JavaInte {
    * 
    */
   public static void ifelseStatement(int thisIsAChoice) {
-
+    
     int ifChoice = thisIsAChoice;
     if (ifChoice % 2 == 0) {
       System.out.println(" this number is even");
@@ -339,6 +257,77 @@ public class JavaInte {
       System.out.println(" this number is odd.");
     }
 
+  }
+  
+  public static void condiState(){
+    Scanner stuff = new Scanner(System.in);
+    int condi_menu = stuff.nextInt();
+   
+    System.out.println("\nPlease select an option: \n");
+    System.out.println("1. Relational operators");
+    System.out.println("2. Conditional operators");
+
+
+    switch (condi_menu) {
+      case 1:
+
+        System.out.println(" \t relational operator is a programming language "
+            + "construct or operator that tests or defines some kind "
+            + "of relation between two values.\n");
+        System.out.println("\t In more simplistic terms, this operation "
+            + "compares and distinguishes objects of the same type");
+        System.out.println(" \n\tThe equality and relational operators determine if one "
+            + "operand is greater than, less than, equal or not equal to another operand.");
+
+        /*
+         * Some of the more common symbols include == equal to != not equal to > greater than
+         * >= greater than or equal to < less than <= less than or equal to
+         */
+
+        System.out.println(
+            "\tfor example please type in two integers in order to compare them:  \n");
+
+        int Cond_val1 = stuff.nextInt();
+        int Cond_val2 = stuff.nextInt();
+        stuff.close();//this closes the stuff scanner
+        if (Cond_val1 == Cond_val2) {
+          System.out.println("value 1 == value 2");
+        }
+        if (Cond_val1 != Cond_val2) {
+          System.out.println("value1 != value2");
+        }
+        if (Cond_val1 > Cond_val2) {
+          System.out.println("value1 > value2");
+        }
+        if (Cond_val1 < Cond_val2) {
+          System.out.println("value1 < value2");
+        }
+        if (Cond_val1 <= Cond_val2) {
+          System.out.println("value1 <= value2");
+        }
+
+        break;
+
+      case 2:
+        System.out.println("The && and || operators perform Conditional-AND and Conditional-OR "
+                + "operations on two boolean expressions. "
+                + "\nThese operators exhibit 'short-circuiting' behavior, "
+                + "which means that the second operand is evaluated only if needed.");
+
+        int value1 = 1;
+        int value2 = 2;
+        if ((value1 == 1) && (value2 == 2)) {
+          System.out.println("value1 is 1 AND value2 is 2");
+        }
+        if ((value1 == 1) || (value2 == 1)) {
+          System.out.println("value1 is 1 OR value2 is 1");
+        }
+
+        break;
+
+      default:
+        System.out.println("Invalid Choice\n back to main.");
+    }
   }
 
   /**
@@ -417,4 +406,37 @@ public class JavaInte {
     }
   }
 
+ public static void arrSample(int arrg){
+   
+
+   System.out.println("\nPlease select an array example: \n");
+   System.out.println("1. find smallest value in array");
+   System.out.println("2. find sum values of an array ");
+
+
+   switch (arrg) {
+     case 1:
+
+       int[] Minarray = new int[] { 10, 11, 88, 2, 12, 120 };
+       System.out.println("\nThe array values are: 10, 11, 88, 2, 12, 120");
+       // Calling MinVal() method for getting min value
+       int min = MinVal(Minarray);
+       System.out.println("Minimum Value is: " + min);
+
+       break;
+
+     case 2:
+       int[] sum_arr = new int[] { 21, 16, 86, 21, 3 };
+       System.out.println("\nThe array values are: 21,16,86,21,3");
+       int sums_fer_bums = sumVal(sum_arr);
+       System.out.println("The sum is " + sums_fer_bums);
+
+       break;
+
+     default:
+       System.out.println("Invalid Choice\n back to main.");
+   }
+
+ }
+  
 }
